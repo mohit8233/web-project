@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order</title>
+      <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+       	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+   <style>
+    body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+}
+.box2 {
+      background: #333;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .box2 ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+     justify-content: space-between;
+    }
+
+    .box2 ul li {
+      position: relative; /* dropdown ke liye */
+    }
+
+    .box2 ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .box2 ul li a:hover {
+      background: #555;
+    }
+
+    /* Dropdown */
+    .box2 ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #444;
+      min-width: 180px;
+      padding: 0;
+    }
+
+    .box2 ul li ul li {
+      width: 100%;
+    }
+
+    .box2 ul li ul li a {
+      padding: 12px 16px;
+    }
+
+    .box2 ul li:hover ul {
+      display: block; /* hover pe dropdown dikhe */
+    }
+
+         nav {
+                 display: flex;
+				 height: 50px;
+                 align-items: center;
+                 /* justify-content: space-between; */
+              
+				 color: black;
+         }
+
+
+.nav1{
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+        */
+       padding-left: 20px;
+    /* border: 2px solid black; */
+
+  font-family: "Macondo", cursive;
+  /* font-weight: 400;
+  font-style: normal; */
+
+
+}
+
+.nav1 h4 span{
+  color: rgb(242, 206, 5);
+}
+/* .nav1 h1{
+    font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+} */
+.nav2{
+     /* border: 2px solid black; */
+ padding-top: 10px;
+}
+.nav2 ul 
+{
+	
+    display: inline-block;
+    list-style: none;
+}
+.nav2  ul li
+{
+    display: inline-block;
+    margin-right: 70px;
+}
+.nav2  ul li a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+.nav2 li a:hover{
+	color: rgb(159, 93, 8);
+}
+.track-container {
+    /* max-width: 700px; */
+    /* margin: auto; */
+
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.track-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.red-line {
+    border: none;
+    height: 2px;
+    background-color: red;
+    margin-bottom: 20px;
+}
+
+.track-container p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.search-by {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.radio-label {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.input-box {
+    display: block;
+    width: 400px;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background-color: red;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: darkred;
+}
+footer {
+      background: #0b1622;
+      padding: 40px 50px;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff4747;
+    }
+    /* .popular{
+      color: white;
+    } */
+    .footer-top {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    /* .popular h3 {
+      color: #ff4747;
+    } */
+     /* .popular {
+      background: #111a27;
+      padding: 20px;
+      display: flex;
+      text-align: center;
+       gap: 100px;
+      
+       padding-top: 40px;
+      border-radius: 6px;
+      max-width: 800px;
+    }
+
+    .popular h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ff4747;
+      margin-left: 400px;
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+
+    .category strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    } */
+
+    /* Sunglasses list side by side (like columns) */
+    /* .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .list span {
+      background: #1c2533;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: inline-block;
+      white-space: nowrap;
+    } */
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      margin-right: 15px;
+      font-size: 22px;
+      display: inline-block;
+    }
+     .thankyou-container {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Overlay (hey there!!) */
+.overlay-text {
+  position: absolute;
+  top: 10px;
+  left: 20%;
+  font-size: 48px;
+  font-family: 'Brush Script MT', cursive;
+  font-weight: normal;
+  color: #000;
+  transform: rotate(-5deg);
+}
+
+/* Main THANK YOU text */
+.main-text {
+  font-size: 100px;
+  font-weight: 900;
+  color: #e60000; /* Red */
+  line-height: 1;
+}
+
+/* Sub text (below THANK YOU) */
+.sub-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+/* Side vertical text */
+.side-text {
+  position: absolute;
+  right: 300px;
+  top: 50%;
+  transform: rotate(90deg) translateY(-50%);
+  transform-origin: right center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 2px;
+}
+    /* .payment img {
+      height: 35px;
+      margin-left: 100px;
+    }
+   */
+     /* .thankyou-container {
+  position: relative;
+  display: inline-block;
+  padding: 100px 20px;
+}
+
+
+.overlay-text{
+   font-family: 'Brush Script MT', cursive;
+      font-size: 36px;
+      color: black;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transform: rotate(-5deg);
+}
+.main-text {
+  font-size: 100px;
+  font-weight: 900;
+  color: red;
+  z-index: 1;
+  position: relative;
+}
+
+.sub-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: -20px;
+  color: black;
+}
+
+.side-text {
+  position: absolute;
+  right: -40px;
+  top: 150px;
+  transform: rotate(90deg) translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+} */ */
+
+
+    /* .thankyou-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .overlay-text {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 36px;
+      color: black;
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      transform: rotate(-5deg);
+    }
+
+    .main-text {
+      font-size: 80px;
+      font-weight: bold;
+      color: red;
+      margin: 0;
+    }
+
+    .sub-text {
+      font-size: 18px;
+      color: #333;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
+    .side-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 14px;
+      position: absolute;
+      right: -30px;
+      top: 0;
+      color: #555;
+      font-family: sans-serif;
+    } */
+    .footer-bottom{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    } 
+      .footer-bottom{
+        display: flex;
+          justify-content: space-between;
+      }
+      .popular {
+      background: #111a27;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 900px;
+    }
+
+    .popular h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ff4747;
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+
+    .category strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    /* Sunglasses list side by side using flex */
+    .list {
+      display: flex;
+      flex-wrap: wrap;       /* allow items to move to next line if needed */
+      gap: 10px;             /* space between items */
+    }
+
+    .list span {
+      background: #1c2533;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;  
+    }
+    
+    #menu-toggle {
+      display: none;
+    }
+    
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: rgb(6, 5, 5);
+      margin-left: 60px;
+      display: none;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background: #ddd;
+    }
+
+   
+    #menu-toggle:checked + .dropdown-content {
+      display: block;
+    }
+   
+   .menubar{
+    display: none;
+    margin-left: 70px;
+   }
+    @media(max-width:678px){
+  .box{
+    display: none;
+  }
+  .search-container{
+    display: flex;
+    gap: 20px;
+  }
+  .nav2{
+    display: none;
+  }
+  nav{
+    gap: 10px;
+  }
+  .nav1{
+    padding-top: 10px;
+  }
+  .box2 ul{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+  .box2 ul li ul{
+    margin-left: 190px;
+    width:auto;
+  }
+  .menu-icon{
+    display: block;
+  }
+  /* #menu-toggle{
+    display: block;
+  } */
+   .side-text{
+    right: 50px;
+   }
+   /* footer{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+   } */
+    .footer-bottom{
+      display: grid;
+      font-size: 10px;
+      width: 100%;
+      grid-template-columns: auto;
+      
+    }
+    .footer-bottom img{
+            width: 100%;
+    }
+}
+   </style>
+</head>
+<body>
+     <header>
+         <nav>
+                <div class="nav1">
+                  <h4><span>G</span>OGGLES.COM</h4>
+                </div>
+                <div class="nav2">
+                   <ul id='MenuItems'>
+                    <li><a href="./index.html"><i class="fa-regular fa-user" ></i>Home</a></li>
+                    <li><a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+                    <li><a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+                    <li><a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+                 
+                </ul>
+				
+                </div>
+			
+			 	  <form class="d-flex search-container" role="search">
+                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                   <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+        <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+  <input type="checkbox" id="menu-toggle">
+  <div class="dropdown-content">
+    <a href="./index.html"><i class="fa fa-house"></i> Home</a>
+    <a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+    <a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+    <a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+  </div>
+            </nav>
+       
+    	<div class="box2">
+			 <ul>
+      <li>
+        <a href="#">SUNGLASSES</a>
+   
+        <ul>
+          <li><a href="./men.html">MEN</a></li>
+          <li><a href="./women.html">WOMEN</a></li>
+          <li><a href="#">SHOP BY FACE SHAPE</a></li>
+          <li><a href="#">SHPO BY OCCASION</a></li>
+        </ul>
+      </li>
+      <li><a href="#">COMPUTER GLASSES</a></li>
+      <li><a href="#">UNISEX</a></li>
+      <li><a href="#">TRAVEL EDITION</a></li>
+      <li><a href="#">BULK PURCHASE</a></li>
+    </ul>
+			</div>
+       </header>
+    <div class="track-container">
+        <h1>Track Your Order</h1>
+        <hr class="red-line">
+        <p>Enter your Tracking ID to check your order status. You can find the Tracking ID in the order confirmation SMS/Email.</p>
+
+        <form>
+            <label class="search-by">Search By:</label>
+            <label class="radio-label">
+                <input type="radio" name="search" checked>
+                Tracking ID
+            </label>
+
+            <input  type="text" placeholder="Tracking ID" class="input-box">
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+      <div class="thankyou-container">
+    <div class="overlay-text">hey there!!</div>
+    <div class="main-text">THANK YOU</div>
+    <div class="sub-text">FOR SHOPPING WITH US.</div>
+     <div class="side-text">Goggles.com</div>
+      </div>
+      <footer>
+    <p><strong>Buy The Best Eyewear From Goggles.com</strong><br>
+      Goggles is online shopping destination for sunglasses & goggles.
+    </p>
+
+    <div class="footer-top">
+      <div>
+        <h3>Company</h3>
+        <a href="#">About US</a>
+        <a href="#">Blogs</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping policy</a>
+      </div>
+
+      <div>
+        <h3>Need Help</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Return , Refund and Cancellation</a>
+        <a href="#">FAQ</a>
+        <a href="#">Track Orders</a>
+      </div>
+
+      <div>
+        <h3>Shop by Brand</h3>
+        <a href="#">Red Pappy</a>
+        <a href="#">Ockhi</a>
+      </div>
+
+      <div>
+        <h3>Service</h3>
+        <a href="#">Bulk Purchase</a>
+      </div>
+
+      <div>
+            Bopal Gam, Vakil Sah Breez
+             () ahmedabad, India- 380058
+      </div>
+ </div>
+     <div class="popular">
+    <h3>Popular Categories</h3>  
+
+    <div class="category">
+      <strong>Popular Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+        <span>Hexagonal Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Men's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Women's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+  </div>
+   
+
+    <div class="social">
+      <span>Let’s connect </span>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Goggles Distribution Pvt. Ltd. All Rights Reserved.</p>
+      <div class="payment">
+        <img  src="./Screenshot 2025-08-24 201343.png" alt="">
+      
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

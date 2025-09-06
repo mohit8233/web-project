@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      border: 2px solid black;
+    }
+
+    .box2 {
+      background: #333;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    form {
+      margin-left: 10px;
+    }
+
+    .box2 ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box2 ul li {
+      position: relative;
+    }
+
+    .box2 ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .box2 ul li a:hover {
+      background: #555;
+    }
+
+
+    .box2 ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #444;
+      min-width: 180px;
+      padding: 0;
+    }
+
+    .box2 ul li ul li {
+      width: 100%;
+    }
+
+    .box2 ul li ul li a {
+      padding: 12px 16px;
+    }
+
+    .box2 ul li:hover ul {
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      height: 70px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid black;
+      color: black;
+    }
+
+
+    .nav1 {
+      /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+        */
+      padding-left: 20px;
+      /* border: 2px solid black; */
+
+      font-family: "Macondo", cursive;
+      /* font-weight: 400;
+  font-style: normal; */
+
+
+    }
+
+    header {
+      border-bottom: 2px solid black;
+    }
+
+    .box {
+      background-color: black;
+      color: hsl(0, 0%, 100%);
+      height: 30px;
+      display: grid;
+
+      align-items: center;
+    }
+
+    .nav1 h4 span {
+      color: rgb(242, 206, 5);
+    }
+
+   
+   
+
+    .search {
+      display: flex;
+      gap: 20px;
+       align-items: center;
+      margin-left: 100px;
+    }
+     .search .btn{
+      margin-right: 20px;
+     }
+    .form-control {
+      width: 150px;
+    
+    }
+
+    .nav2 ul {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav2 ul li {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-right: 50px;
+    }
+
+    .nav2 ul li a {
+      text-decoration: none;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      font-family: sans-serif;
+    }
+
+    .nav2 li a:hover {
+      color: rgb(159, 93, 8);
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Label as menu icon */
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: rgb(6, 5, 5);
+      /* margin-left: 60px; */
+      display: none;
+    }
+
+    /* Dropdown menu (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: #f9f9f9;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background: #ddd;
+    }
+
+    /* Show dropdown when checkbox is checked */
+    #menu-toggle:checked+.dropdown-content {
+      display: block;
+    }
+
+    .menubar {
+      display: none;
+      margin-left: 90px;
+    }
+    section{
+        margin-top: 2rem;
+        text-align: center;
+      
+    }
+    /* p{
+        font-size: 30px;
+    } */
+    p span{
+        color: red;
+    }
+    .cursor{
+    position: relative;
+    width: 4em;
+    padding-top: 20px;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+/* Animation */
+.typewriter-animation {
+  animation: 
+    typewriter 3s steps(50) 1s 1 normal both, 
+    blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+}
+
+.box1{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+  .card1 img{
+    border-radius: 10px;
+          box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    cursor: pointer;
+  }
+  .card1 h3{
+    margin-top: 1rem;
+  }
+   .card2 img{
+    border-radius: 10px;
+     cursor: pointer;
+    box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .card2 h3{
+    margin-top: 1rem;
+  }
+   .card3 img{
+    border-radius: 10px;
+    width: 380px;
+    cursor: pointer;
+    box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .card3 h3{
+    margin-top: 1rem;
+  }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+      <div class="nav1">
+        <h4><span>G</span>OGGLES.COM</h4>
+      </div>
+      <div class="nav2">
+        <ul>
+          <li><a href="./index.html"><i class="fa-regular fa-user"></i>Home</a></li>
+          <li><a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+          <li><a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+          <li><a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+
+        </ul>
+
+      </div>
+
+      <form class="search" role="search">
+        <input class="form-control " type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+
+
+      <input type="checkbox" id="menu-toggle">
+
+      <div class="dropdown-content">
+        <a href="./index.html"><i class="fa fa-house"></i> Home</a>
+        <a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+        <a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+        <a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+        <ul>
+          <li>
+            <a href="#">SUNGLASSES</a>
+            Dropdown items
+            <ul>
+              <li><a href="./men.html">MEN</a></li>
+              <li><a href="./women.html">WOMEN</a></li>
+              <li><a href="#">SHOP BY FACE SHAPE</a></li>
+              <li><a href="#">SHOP BY OCCASION</a></li>
+            </ul>
+          </li>
+          <li><a href="./computer.html">COMPUTER GLASSES</a></li>
+          <li><a href="#">UNISEX</a></li>
+          <li><a href="#">TRAVEL EDITION</a></li>
+          <li><a href="#">BULK PURCHASE</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="box2">
+      <ul>
+        <li>
+          <a href="#">SUNGLASSES</a>
+          <!-- Dropdown items -->
+          <ul>
+            <li><a href="./women.html">WOMEN</a></li>
+            <li><a href="./men.html">MEN</a></li>
+            <li><a href="#">SHOP BY FACE SHAPE</a></li>
+            <li><a href="#">SHOP BY OCCASION</a></li>
+          </ul>
+        </li>
+        <li><a href="./computer.html">COMPUTER GLASSES</a></li>
+        <li><a href="#">UNISEX</a></li>
+        <li><a href="#">TRAVEL EDITION</a></li>
+        <li><a href="#">BULK PURCHASE</a></li>
+      </ul>
+    </div>
+  </header>
+    <section>
+        <h1>Bulk Purchase for</h1>
+          <p class="cursor typewriter-animation"><span>Sunglasses</span> with <span>Customization</span></p>
+          <p>Welcome to our Bulk Purchase Program, designed to cater to your needs for corporate gifting, wedding favors, and event giveaways etc. Our premium selection of sunglasses and eyeglasses is perfect for any occasion, ensuring quality, style and thoughtfulness.</p>
+           
+          <div class="box1">
+            <div class="card1">
+                <img src="https://image.the-woggles.com/catalog/bulk/landing_desktop_corporate-gifting.jpg" alt="">
+                <h3>Corporate Gifting</h3>
+            </div>
+            <div class="card2">
+                
+                <img src="https://image.the-woggles.com/catalog/bulk/desktop_wedding_1.jpg" alt="">
+                <h3>Wedding Favors</h3>
+            </div>
+            <div class="card3">
+                <img src="https://image.the-woggles.com/catalog/bulk/desktop_event-giveway_1.jpg" alt="">
+                <h3>Event Giveaways</h3>
+            </div>
+          </div>
+
+
+    </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

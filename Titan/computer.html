@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>computer Sunglasses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      border: 2px solid black;
+    }
+
+    .box2 {
+      background: #333;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    form {
+      margin-left: 10px;
+    }
+
+    .box2 ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box2 ul li {
+      position: relative;
+    }
+
+    .box2 ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .box2 ul li a:hover {
+      background: #555;
+    }
+
+
+    .box2 ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #444;
+      min-width: 180px;
+      padding: 0;
+    }
+
+    .box2 ul li ul li {
+      width: 100%;
+    }
+
+    .box2 ul li ul li a {
+      padding: 12px 16px;
+    }
+
+    .box2 ul li:hover ul {
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      height: 70px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid black;
+      color: black;
+    }
+
+
+    .nav1 {
+      /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+        */
+      padding-left: 20px;
+      /* border: 2px solid black; */
+
+      font-family: "Macondo", cursive;
+      /* font-weight: 400;
+  font-style: normal; */
+
+
+    }
+
+    header {
+      border-bottom: 2px solid black;
+    }
+
+    .box {
+      background-color: black;
+      color: hsl(0, 0%, 100%);
+      height: 30px;
+      display: grid;
+
+      align-items: center;
+    }
+
+    .nav1 h4 span {
+      color: rgb(242, 206, 5);
+    }
+
+   
+   
+
+    .search {
+      display: flex;
+      gap: 20px;
+       align-items: center;
+      margin-left: 100px;
+    }
+     .search .btn{
+      margin-right: 20px;
+     }
+    .form-control {
+      width: 150px;
+    
+    }
+
+    .nav2 ul {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav2 ul li {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-right: 50px;
+    }
+
+    .nav2 ul li a {
+      text-decoration: none;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      font-family: sans-serif;
+    }
+
+    .nav2 li a:hover {
+      color: rgb(159, 93, 8);
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Label as menu icon */
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: rgb(6, 5, 5);
+      /* margin-left: 60px; */
+      display: none;
+    }
+
+    /* Dropdown menu (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: #f9f9f9;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background: #ddd;
+    }
+
+    /* Show dropdown when checkbox is checked */
+    #menu-toggle:checked+.dropdown-content {
+      display: block;
+    }
+
+    .menubar {
+      display: none;
+      margin-left: 90px;
+    }
+
+    .box3 {
+      margin-top: 40px;
+      display: grid;
+      padding-left: 60px;
+      gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .section {
+      margin-top: 90px;
+      text-align: center;
+    }
+
+    .poster1 img {
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px;
+    }
+
+    .men-container {
+      margin-top: 30px;
+      /* border: 2px solid black; */
+      display: grid;
+      justify-content: center;
+      grid-template-columns: auto auto auto auto;
+      gap: 40px;
+    }
+
+    .card1 {
+      height: 400px;
+      width: 270px;
+
+      /* box-shadow: rgba(22, 22, 22, 0.879) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+      /* margin-left: 25px; */
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      position: relative;
+    }
+
+    .mini-card1 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/luminescence_radiant_wayfarer_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+
+      /* box-shadow: rgba(3, 3, 3, 0.13) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card1:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/luminescence_radiant_wayfarer_blue_screen_glasses_deatiled_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card1 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card1 .span {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+    }
+
+    .card1 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card1 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card1 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card1 p {
+      margin-left: 20px;
+    }
+
+    .card1 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card1 button {
+      border: none;
+      padding: 5px;
+      margin-top: 4px;
+      width: 100%;
+
+    }
+
+    .card2 {
+      height: 400px;
+      width: 270px;
+      background-color: lab(100% 0.01 -0.01);
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+      /* border: 2px solid rgba(0, 0, 0, 0.075); */
+      position: relative;
+    }
+
+    .mini-card2 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* box-shadow: transparent; */
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/light_coral_wayfarer_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0.178) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .card2 .span2 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card3 .span2 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card3 .span2 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card3 .span2 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .mini-card2:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/light_coral_wayfarer_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card2 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card2 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card2 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card2 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card2 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card2 p {
+      margin-left: 20px;
+    }
+
+    .card2 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card2 button {
+      border: none;
+      padding: 5px;
+      margin-top: 4px;
+      width: 100%;
+
+    }
+
+    .card3 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+      /* border: 2px solid rgba(0, 0, 0, 0.075); */
+      position: relative;
+    }
+
+    .mini-card3 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/cipher_code_cateye_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card3:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_packaging_2024_2_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card3 h3 {
+      position: absolute;
+      left: 9px;
+      padding: 7px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card3 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card3 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card3 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card3 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card3 p {
+      margin-left: 20px;
+    }
+
+    .card3 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card3 button {
+      border: none;
+      padding: 5px;
+      margin-top: 5px;
+      width: 100%;
+
+    }
+
+    .card4 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+      /* border: 2px solid rgba(0, 0, 0, 0.075); */
+      position: relative;
+    }
+
+    .mini-card4 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/covert_berry_cateye_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card4:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/covert_berry_cateye_blue_screen_glasses_folded_view_800x800.jpg);
+
+    }
+
+    .card4 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card4 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card4 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card4 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card4 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card4 p {
+      margin-left: 20px;
+    }
+
+    .card4 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card4 button {
+      border: none;
+      padding: 5px;
+      margin-top: 4px;
+      width: 100%;
+
+    }
+
+    .card5 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 25px; */
+      /* border: 2px solid rgba(0, 0, 0, 0.075); */
+      position: relative;
+    }
+
+    .mini-card5 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/dazzling_circles_round_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card5:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/dazzling_circles_round_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card5 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card5 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card5 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card5 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card5 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card5 p {
+      margin-left: 20px;
+    }
+
+    .card5 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card5 button {
+      border: none;
+      padding: 5px;
+      margin-top: 4px;
+      width: 100%;
+
+    }
+
+
+    .card6 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+
+      position: relative;
+    }
+
+    .mini-card6 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card6:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card6 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card6 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card6 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card6 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card6 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card6 p {
+      margin-left: 20px;
+    }
+
+    .card6 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card6 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .card7 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+
+      position: relative;
+    }
+
+    .mini-card7 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/sion_insight_round_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card7:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/sion_insight_round_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card7 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card7 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card7 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card7 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card7 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card7 p {
+      margin-left: 20px;
+    }
+
+    .card7 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card7 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .card8 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+
+      position: relative;
+    }
+
+    .mini-card8 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/spiritual_spheres_round_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card8:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/spiritual_spheres_round_blue_screen_glasses_model_view2_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card8 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card8 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card8 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card8 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card8 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card8 p {
+      margin-left: 20px;
+    }
+
+    .card8 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card8 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .card9 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 25px; */
+
+      position: relative;
+    }
+
+    .mini-card9 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/hueless_view_round_blue_screen_glasses_front_view_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card9:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/hueless_view_round_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card9 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card9 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card9 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card9 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card9 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card9 p {
+      margin-left: 20px;
+    }
+
+    .card9 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card9 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .card10 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+
+      position: relative;
+    }
+
+    .mini-card10 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/viz_carve_round_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card10:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/viz_carve_round_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card10 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card10 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card10 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card10 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card10 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card10 p {
+      margin-left: 20px;
+    }
+
+    .card10 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card10 button {
+      border: none;
+      padding: 5px;
+      margin-top: 4px;
+      width: 100%;
+
+    }
+
+    .card11 {
+      height: 400px;
+      width: 270px;
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      /* margin-left: 20px; */
+
+      position: relative;
+    }
+
+    .mini-card11 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/hueless_view_round_blue_screen_glasses_front_view_800x800.jpg);
+      background-size: cover;
+      /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    }
+
+    .mini-card11:hover {
+      cursor: pointer;
+       content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/hueless_view_round_blue_screen_glasses_folded_view_800x800.jpg);
+
+    }
+
+    .card11 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card11 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card11 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card11 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card11 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card11 p {
+      margin-left: 20px;
+    }
+
+    .card11 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card11 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .card12 {
+      height: 400px;
+      width: 270px;
+      /* margin-left: 20px; */
+      background-color: #ffffff;
+      box-shadow: rgba(22, 22, 22, 0.272) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      position: relative;
+    }
+
+    .mini-card12 {
+      height: 250px;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 7px;
+
+      /* border: 2px solid black; */
+      background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_base_800x800.jpg);
+      background-size: cover;
+
+    }
+
+    .mini-card12:hover {
+      cursor: pointer;
+      content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_folded_view_800x800.jpg);
+      /* content: url(https://www.woggles.in/p/wo/auralite-black-polarized-square-sunglasses); */
+    }
+
+    .card12 h3 {
+      position: absolute;
+      left: 15px;
+      padding: 5px;
+      top: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+      background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+    }
+
+    .card12 .span1 {
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+    }
+
+    .card12 h4 {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .card12 h6 {
+      position: absolute;
+      right: 0;
+      top: 270px;
+      margin-right: 22px;
+
+    }
+
+    .card12 h5 {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+
+    .card12 p {
+      margin-left: 20px;
+    }
+
+    .card12 p span {
+      color: rgb(13, 66, 224);
+    }
+
+    .card12 button {
+      border: none;
+      padding: 5px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .poster {
+      /* border: 2px solid black; */
+      width: 100%;
+      height: 370px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    .poster1 {
+      /* border: 2px solid black; */
+      width: 100%;
+      height: 370px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    h5 span {
+      color: #5555554e;
+      text-decoration: line-through;
+    }
+     .main-container{
+            margin-top: 30px;
+           border: 2px solid black;
+           display: grid;
+           grid-template-columns: auto auto auto auto;
+           gap: 20px;
+        }
+         .mini-box1{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/noir_blue_square_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box1:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/noir_blue_square_blue_screen_glasses_folded_view_800x800.jpg);
+          
+        }
+         .mini-box2{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box2:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_model_view2_800x800.jpg);
+            
+        }
+         .mini-box3{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/salmon_glow_rectangle_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box3:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/salmon_glow_rectangle_blue_screen_glasses_folded_view_800x800.jpg);
+          
+        }
+         .mini-box4{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/salmon_glow_rectangle_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box4:hover{
+          cursor: pointer;
+          content: url(./sec04.jpg);
+           
+        }
+         .mini-box5{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+           background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/sorbet_sunrise_rectangle_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box5:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/luminescence_radiant_wayfarer_blue_screen_glasses_folded_view_800x800.jpg);
+           
+        }
+         .mini-box6{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box6:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_folded_view_800x800.jpg);
+           
+        }
+         .mini-box7{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box7:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/lens_loom_square_blue_screen_glasses_folded_view_800x800.jpg);
+           
+        }
+         .mini-box8{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+           background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .mini-box8:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_model_view2_800x800.jpg);
+           
+        }
+         .mini-box9{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(./sec-img9.jpg);
+          background-size: cover;
+          
+        }
+        .mini-box9:hover{
+          cursor: pointer;
+          content: url(./sec09.jpg);
+           
+        }
+         .mini-box10{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(./sec-img10.jpg);
+          background-size: cover;
+         
+        }
+        .mini-box10:hover{
+          cursor: pointer;
+          content: url(./sec10.jpg);
+          
+        }
+         .mini-box11{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+          
+        }
+        .mini-box11:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_model_view2_800x800.jpg);
+           
+        }
+         .mini-box12{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+            background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+        }
+        .mini-box12:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/opti_linearity_round_blue_screen_glasses_model_view2_800x800.jpg);
+        
+        }
+         .main-container2{
+            margin-top: 30px;
+           border: 2px solid black;
+           display: grid;
+           grid-template-columns: auto auto auto auto;
+           gap: 20px;
+        }
+         .main-box1{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_folded_view_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box1:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_side_view_800x800.jpg);
+          
+        }
+         .main-box2{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/sundown_blue_square_sunglasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box2:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/sundown_blue_square_sunglasses_detailed_view_400x400.jpg);
+            
+        }
+         .main-box3{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box3:hover{
+          cursor: pointer;
+           content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_folded_view_800x800.jpg);   
+        }
+         .main-box4{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(./sec-img4.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box4:hover{
+          cursor: pointer;
+          content: url(./sec04.jpg);
+           
+        }
+         .main-box5{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_folded_view_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box5:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_side_view_800x800.jpg);
+           
+        }
+         .main-box6{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_folded_view_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box6:hover{
+          cursor: pointer;
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_base_800x800.jpg);
+           
+        }
+         .main-box7{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/conundrum_mystery_cateye_blue_screen_glasses_base_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box7:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/conundrum_mystery_cateye_blue_screen_glasses_folded_view_800x800.jpg);
+           
+        }
+         .main-box8{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_folded_view_800x800.jpg);
+          background-size: cover;
+           /* box-shadow: rgba(3, 3, 3, 0) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        }
+        .main-box8:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/peony_pink_wayfarer_blue_screen_glasses_side_view_800x800.jpg);
+           
+        }
+         .main-box9{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+           background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_base_800x800.jpg);          background-size: cover;
+          
+        }
+        .main-box9:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_folded_view_800x800.jpg);
+           
+        }
+         .main-box10{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/coco_wood_polarized_square_sunglasses_base_800x800.jpg);
+          background-size: cover;
+         
+        }
+        .main-box10:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/coco_wood_polarized_square_sunglasses_deatiled_view_800x800.jpg);
+          
+        }
+         .main-box11{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+          background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/30%20march%20new%20product/cloudsurfer_polarized_aviator_sunglasses_base_800x800.jpg);
+          background-size: cover;
+          
+        }
+        .main-box11:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/30%20march%20new%20product/cloudsurfer_polarized_aviator_sunglasses_side_view_800x800.jpg);
+           
+        }
+         .main-box12{
+        height: 250px;
+        width: 250px;
+        margin-top: 15px;
+          margin-left: 7px;
+          
+          /* border: 2px solid black; */
+            background-image: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_base_800x800.jpg);          background-size: cover;
+          
+        }
+        .main-box12:hover{
+          cursor: pointer;
+          content: url(https://image.the-woggles.com/cache/catalog/products/woggles_new_image_9_12_2022/voyage_focus_round_blue_screen_glasses_folded_view_800x800.jpg);
+        
+        }
+        .faq-box{
+          margin-top: 30px;
+          text-align: center;
+        }
+          footer {
+      background: #0b1622;
+      padding: 40px 50px;
+      line-height: 1.8;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff4747;
+    }
+    /* .popular{
+      color: white;
+    } */
+    .footer-top {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    /* .popular h3 {
+      color: #ff4747;
+    } */
+     /* .popular {
+      background: #111a27;
+      padding: 20px;
+      display: flex;
+      text-align: center;
+       gap: 100px;
+      
+       padding-top: 40px;
+      border-radius: 6px;
+      max-width: 800px;
+    }
+
+    .popular h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ff4747;
+      margin-left: 400px;
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+
+    .category strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    } */
+
+    /* Sunglasses list side by side (like columns) */
+    /* .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .list span {
+      background: #1c2533;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: inline-block;
+      white-space: nowrap;
+    } */
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      margin-right: 15px;
+      font-size: 22px;
+      display: inline-block;
+    }
+
+    .payment img {
+      height: 35px;
+      margin-left: 10px;
+    }
+    
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    } 
+      
+      .popular {
+      background: #111a27;
+      padding: 20px;
+      border-radius: 6px;
+
+      max-width: 900px;
+    }
+
+    .popular h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ff4747;
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+    .category strong:hover {
+      color: #ff4747;
+      cursor: pointer;
+    }
+    .category span:hover{
+           color: #ff4747;
+           cursor: pointer;
+    }
+    .category strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+     .social .insta:hover{
+      color: darkmagenta;
+     }
+     .social .ytube:hover{
+      color: crimson;
+     }
+     .social .facebook:hover{
+      color: rgb(17, 52, 208);
+     }
+     .social .linkdin:hover{
+      color: rgb(20, 50, 220);
+     }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;       
+      gap: 10px;            
+    }
+
+    .list span {
+      background: #1c2533;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap; 
+    }
+    h5 span{
+      color: #0000003b;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <marquee behavior="scroll" direction="left">Free Shipping | ₹500 off on or above orders of ₹2599&nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp;Free Shipping | Pay Later With 3 NO Cost EMIs</marquee>
+  </div>
+  <header>
+    <nav>
+      <div class="nav1">
+        <h4><span>G</span>OGGLES.COM</h4>
+      </div>
+      <div class="nav2">
+        <ul>
+          <li><a href="./index.html"><i class="fa-regular fa-user"></i>Home</a></li>
+          <li><a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+          <li><a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+          <li><a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+
+        </ul>
+
+      </div>
+
+      <form class="search" role="search">
+        <input class="form-control " type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+
+
+      <input type="checkbox" id="menu-toggle">
+
+      <div class="dropdown-content">
+        <a href="./index.html"><i class="fa fa-house"></i> Home</a>
+        <a href='#'><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+        <a href='#'><i class="fa-solid fa-bag-shopping"></i>Cart</a></li>
+        <a href='./order.html'><i class="fa-regular fa-truck"></i>Track Order</a></li>
+        <ul>
+          <li>
+            <a href="#">SUNGLASSES</a>
+            Dropdown items
+            <ul>
+              <li><a href="./men.html">MEN</a></li>
+              <li><a href="./women.html">WOMEN</a></li>
+              <li><a href="#">SHOP BY FACE SHAPE</a></li>
+              <li><a href="#">SHOP BY OCCASION</a></li>
+            </ul>
+          </li>
+          <li><a href="./computer.html">COMPUTER GLASSES</a></li>
+          <li><a href="#">UNISEX</a></li>
+          <li><a href="#">TRAVEL EDITION</a></li>
+          <li><a href="#">BULK PURCHASE</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="box2">
+      <ul>
+        <li>
+          <a href="#">SUNGLASSES</a>
+          <!-- Dropdown items -->
+          <ul>
+            <li><a href="./women.html">WOMEN</a></li>
+            <li><a href="./men.html">MEN</a></li>
+            <li><a href="#">SHOP BY FACE SHAPE</a></li>
+            <li><a href="#">SHOP BY OCCASION</a></li>
+          </ul>
+        </li>
+        <li><a href="./computer.html">COMPUTER GLASSES</a></li>
+        <li><a href="#">UNISEX</a></li>
+        <li><a href="#">TRAVEL EDITION</a></li>
+        <li><a href="#">BULK PURCHASE</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="section">
+    <h1>Blue Screen Glasses</h1>
+       
+  </section>
+  <section class="poster1">
+    <img width="100%"
+      src="https://image.the-woggles.com//cache/catalog/Category-Banner/dynamic/Artboard%201%20copy%205%20(15)_1000x300.jpg"
+      alt="">
+  </section>
+  <section class="men-container">
+    <div class="card1">
+      <h3>BUY 2 AT ₹1000</h3>
+      <!-- <img width="90%" src="./sunglasses1.jpg" alt=""> -->
+      <span class="span"><i class="fa-solid fa-heart" style="color: #ffffff;"></span></i>
+      <div class="mini-card1">
+
+      </div>
+      <h4>Luminescence</h4>
+      <h6>7 colors</h6>
+      <h5>₹ 499(60% Off)&nbsp; <span><strike>MRP₹1299</strike></span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹759 | 2 at ₹1000</button>
+    </div>
+    <div class="card2">
+      <h3>OG FLASH SALE⚡</h3>
+      <span class="span2"> <i class="fa-solid fa-heart"></i></span>
+      <span class="span1"><i class="fa-regular fa-heart"></i></span>
+      <div class="mini-card2">
+
+      </div>
+      <h4>Midnight</h4>
+      <h6>4 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at Flat ₹499</button>
+    </div>
+    <div class="card3">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card3">
+
+      </div>
+      <h4>Beam</h4>
+      <h6>4 colors</h6>
+      <h5>₹749 &nbsp; <span>MRP₹1599</span></h5>
+      <p>or Rs.250/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+
+    <div class="card4">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card4">
+
+      </div>
+      <h4>Raze</h4>
+      <h6>7 colors</h6>
+      <h5>₹749 &nbsp; <span>MRP₹1898</span></h5>
+      <p>or Rs.250/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+
+    <div class="card5">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card5">
+
+      </div>
+      <h4>Enigma</h4>
+      <h6>2 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card6">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card6">
+
+      </div>
+      <h4>Ocean</h4>
+      <h6>3 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at Flat ₹799 </button>
+    </div>
+    <div class="card7">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card7">
+
+      </div>
+      <h4>TomHawk</h4>
+      <h6>4 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card8">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card8">
+
+      </div>
+      <h4>Luminary</h4>
+      <h6>2 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1298</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card9">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card9">
+
+      </div>
+      <h4>Moss</h4>
+      <h6>2 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+      <p>or Rs.250/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card10">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card10">
+
+      </div>
+      <h4>Radon</h4>
+      <h6>2 colors</h6>
+      <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card11">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card11">
+
+      </div>
+      <h4>Red</h4>
+      <h6>2 colors</h6>
+      <h5>₹1899 &nbsp; <span>MRP₹4000</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+    </div>
+    <div class="card12">
+      <h3>BUY 2 AT ₹1000</h3>
+      <span class="span1"><i class="fa-solid fa-heart"></span></i>
+      <div class="mini-card12">
+
+      </div>
+      <h4>Silver Aviator</h4>
+      <h6>2 colors</h6>
+      <h5>₹1499 &nbsp; <span>MRP₹3000</span></h5>
+      <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+      <button>Buy 1 at ₹1599 | 2 at ₹2000</button>
+    </div>
+  </section>
+  <section class="poster">
+    <img width="100%"
+      src="https://image.the-woggles.com//cache/catalog/Category-Banner/dynamic/Artboard%201%20copy%207%20(14)_1000x300.jpg"
+      alt="">
+  </section>
+
+  <section class="main-container">
+              <div class="card1">
+             <h3>BUY 2 AT ₹1000</h3>
+             <!-- <img width="90%" src="./sunglasses1.jpg" alt=""> -->
+                 <span class="span"><i class="fa-solid fa-heart" style="color: #ffffff;"></span></i>
+              <div class="mini-box1">
+           
+              </div>
+                 <h4>Auralite</h4>
+                 <h6>7 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1299</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+                   <button>Buy 1 at ₹759 | 2 at ₹1000</button>
+          </div>
+              <div class="card2">
+             <h3>OG FLASH SALE⚡</h3>
+                  <span class="span2"> <i class="fa-solid fa-heart" ></i></span> 
+                 <span class="span1"><i class="fa-regular fa-heart"></i></span>
+              <div class="mini-box2">
+                 
+              </div>
+                 <h4>Midnight</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at Flat ₹499</button>
+          </div>
+                  <div class="card3">
+             <h3>BUY 2 AT ₹1000</h3>
+                 <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box3">
+                  
+              </div>
+                 <h4>Beam</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹749 &nbsp; <span>MRP₹1599</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+
+           <div class="card4">
+            <h3>BUY 2 AT ₹1000</h3>
+                           <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box4">
+           
+              </div>
+                 <h4>Raze</h4>
+                 <h6>7 colors</h6>
+                 <h5>₹749 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                  <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+
+           <div class="card5">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box5">
+           
+              </div>
+                 <h4>Enigma</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card6">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box6">
+           
+              </div>
+                 <h4>Ocean</h4>
+                 <h6>3 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at Flat ₹799 </button>
+          </div>
+           <div class="card7">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box7">
+           
+              </div>
+                 <h4>TomHawk</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card8">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box8">
+             
+              </div>
+                 <h4>Luminary</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1298</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card9">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box9">
+             
+              </div>
+                 <h4>Moss</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card10">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box10">
+             
+              </div>
+                 <h4>Radon</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card11">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box11">
+             
+              </div>
+                 <h4>Red</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹1899 &nbsp; <span>MRP₹4000</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card12">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="mini-box12">
+             
+              </div>
+                 <h4>RED PAPPY</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹1499 &nbsp; <span>MRP₹3000</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹1599 | 2 at ₹2000</button>
+          </div>
+       </section>
+       <section class="poster">
+    <img width="100%"
+      src="https://image.the-woggles.com//cache/catalog/Category-Banner/dynamic/Artboard_1_copy_3(16)_1000x300.jpg"
+      alt="">
+  </section>
+       <section class="main-container2">
+              <div class="card1">
+             <h3>BUY 2 AT ₹1000</h3>
+             <!-- <img width="90%" src="./sunglasses1.jpg" alt=""> -->
+                 <span class="span"><i class="fa-solid fa-heart" style="color: #ffffff;"></span></i>
+              <div class="main-box1">
+           
+              </div>
+                 <h4>Auralite</h4>
+                 <h6>7 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1299</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p>
+                   <button>Buy 1 at ₹759 | 2 at ₹1000</button>
+          </div>
+              <div class="card2">
+             <h3>OG FLASH SALE⚡</h3>
+                  <span class="span2"> <i class="fa-solid fa-heart" ></i></span> 
+                 <span class="span1"><i class="fa-regular fa-heart"></i></span>
+              <div class="main-box2">
+                 
+              </div>
+                 <h4>Midnight</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at Flat ₹499</button>
+          </div>
+                  <div class="card3">
+             <h3>BUY 2 AT ₹1000</h3>
+                 <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box3">
+                  
+              </div>
+                 <h4>Beam</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹749 &nbsp; <span>MRP₹1599</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+
+           <div class="card4">
+            <h3>BUY 2 AT ₹1000</h3>
+                           <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box4">
+           
+              </div>
+                 <h4>Raze</h4>
+                 <h6>7 colors</h6>
+                 <h5>₹749 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                  <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+
+           <div class="card5">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box5">
+           
+              </div>
+                 <h4>Enigma</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card6">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box6">
+           
+              </div>
+                 <h4>Ocean</h4>
+                 <h6>3 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at Flat ₹799 </button>
+          </div>
+           <div class="card7">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box7">
+           
+              </div>
+                 <h4>TomHawk</h4>
+                 <h6>4 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card8">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box8">
+             
+              </div>
+                 <h4>Luminary</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1298</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card9">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box9">
+             
+              </div>
+                 <h4>Moss</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1498</span></h5>
+                 <p>or Rs.250/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card10">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box10">
+             
+              </div>
+                 <h4>Radon</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹499 &nbsp; <span>MRP₹1898</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card11">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box11">
+             
+              </div>
+                 <h4>Red</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹1899 &nbsp; <span>MRP₹4000</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹799 | 2 at ₹1000</button>
+          </div>
+           <div class="card12">
+            <h3>BUY 2 AT ₹1000</h3>
+                          <span class="span1"><i class="fa-solid fa-heart"></span></i>
+              <div class="main-box12">
+             
+              </div>
+                 <h4>RED PAPPY</h4>
+                 <h6>2 colors</h6>
+                 <h5>₹1499 &nbsp; <span>MRP₹3000</span></h5>
+                 <p>or Rs.166/Month | <span>Buy on EMI</span></p> 
+                 <button>Buy 1 at ₹1599 | 2 at ₹2000</button>
+          </div>
+       </section>
+       
+       <footer>
+    <p><strong>Buy The Best Eyewear From Woggles</strong><br>
+      Woggles is online shopping destination for sunglasses & goggles.
+    </p>
+
+    <div class="footer-top">
+      <div>
+        <h3>Company</h3>
+        <a href="#">About US</a>
+        <a href="#">Blogs</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping policy</a>
+      </div>
+
+      <div>
+        <h3>Need Help</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Return , Refund and Cancellation</a>
+        <a href="#">FAQ</a>
+        <a href="#">Track Orders</a>
+      </div>
+
+      <div>
+        <h3>Shop by Brand</h3>
+        <a href="#">Red Pappy</a>
+        <a href="#">Ockhi</a>
+      </div>
+
+      <div>
+        <h3>Service</h3>
+        <a href="#">Bulk Purchase</a>
+      </div>
+
+      <div>
+            Bopal Gam, Vakil Sah Breez
+             () Udaipur, India- 380058
+      </div>
+ </div>
+     <div class="popular">
+    <h3>Popular Categories</h3>  
+
+    <div class="category">
+      <strong>Popular Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+        <span>Hexagonal Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Men's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Women's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+  </div>
+   
+
+    <div class="social">
+      <span>Let’s connect </span>
+      <a class="insta" href="#"><i class="fab fa-instagram"></i></a>
+      <a class="facebook" href="#"><i class="fab fa-facebook"></i></a>
+      <a class="ytube" href="#"><i class="fab fa-youtube"></i></a>
+      <a class="pins" href="#"><i class="fab fa-pinterest"></i></a>
+      <a class="linkdin" href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Goggles Distribution Pvt. Ltd. All Rights Reserved.</p>
+      <div class="payment">
+        <img  src="./Screenshot 2025-08-24 201343.png" alt="">
+       
+      </div>
+    </div>
+  </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

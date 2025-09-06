@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style>
+    *{
+      margin:0; 
+      padding:0;
+      box-sizing:border-box;
+     
+    }
+    body{
+      background:#f4f6f8;
+      display:grid;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+      min-height:100vh;
+      overflow: hidden;
+      /* background-repeat: no-repeat;
+      overflow: hidden;
+      background-size: cover;
+         background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/060/223/small/rocket-is-flying-in-galaxy-space-of-the-universe.jpg);
+       */
+    }
+    .container{
+      width:450px;
+       text-align: center;
+      background:url(https://img.freepik.com/premium-vector/geometric-gradient-technology-background_23-2149110132.jpg);
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      position:relative;
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#ffffff;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+    }
+
+    input{
+      margin:8px 0;
+      padding:10px 14px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:14px;
+    }
+    input:focus{
+      outline:none;
+      border-color:#4285f4;
+    }
+
+    button{
+      margin-top:12px;
+      padding:10px;
+      background:#4285f4;
+      color:#fff;
+      border:none;
+      border-radius:6px;
+      font-size:15px;
+      cursor:pointer;
+      transition:background 0.3s;
+    }
+    button:hover{ background:#3367d6; }
+
+     .account{
+      text-align:center;
+      margin-top:15px;
+      font-size:14px;
+      color: #fff;
+    }
+    .account label{
+      color:#4285f4;
+      cursor:pointer;
+    }
+
+    /* --- Toggle Forms --- */
+    #chk{
+      display:none;
+    }
+
+    .register{
+      display:none;
+    }
+
+    #chk:checked ~ .register{
+      display:block;
+    }
+    #chk:checked ~ .login{
+      display:none;
+    }
+
+  
+    ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+ul li a {
+  position: relative; 
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 63px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+}
+
+ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffee10;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+ul li a:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+
+ul li a:hover {
+  color: #ffee10;
+  background-color: #666;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+.stars {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 8s infinite linear;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
+}
+
+.shooting-star:nth-child(1) {
+  top: 20%;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 35%;
+  left: -100px;
+  animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 20%;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+
+  </style>
+</head>
+<body>
+    <div class="stars"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+  <div class="container">
+   
+    <input type="checkbox" id="chk">
+
+    <div class="login">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="account">
+        Don’t have an account? <label for="chk">Register</label>
+      </div>
+    </div>
+
+    <div class="register">
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <div class="account">
+        Already have an account? <label for="chk">Login</label>
+      </div>
+    </div>
+  </div>
+
+   <section>
+        <ul>
+  <li>
+    <a href="#">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fab fa-facebook"></i>
+    </a>
+    </li>
+  <li>
+    <a href="#">
+      <i class="fab fa-instagram"></i>
+    </a>
+    
+  </li>
+  <li>
+    <a href="#">
+      <i class="fab fa-youtube"></i>
+    </a> 
+  </li>
+</ul>
+   </section>
+</body>
+</html>
