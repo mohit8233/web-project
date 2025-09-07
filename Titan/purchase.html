@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
         * {
@@ -18,6 +19,7 @@
 
     body {
       border: 2px solid black;
+    
     }
 
     .box2 {
@@ -103,7 +105,15 @@
     header {
       border-bottom: 2px solid black;
     }
-
+      header{
+            height: 100px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            background-color: lch(97.23% 0.01 296.81);
+        }
     .box {
       background-color: black;
       color: hsl(0, 0%, 100%);
@@ -270,6 +280,358 @@
   .card3 h3{
     margin-top: 1rem;
   }
+  .custom-option{
+   text-align: center;
+   padding-top: 5rem;
+   background-color: rgba(212, 237, 237, 0.388);
+    margin-top: 5rem;
+  }
+  .custom-option h1{
+    margin-top: 2rem;
+    margin-left: 1em;
+    text-align: start;
+  }
+  .box4{
+    
+     display: grid;
+     grid-template-columns: auto auto auto;
+  }
+    .sub-box1{
+     
+      height: 25em;
+      margin-top: 2rem;
+      width: 25rem;
+    }
+    .sub-box2{
+     
+      height: 25em;
+      margin-top: 2rem;
+      width: 25rem;
+    }
+    .sub-box3{
+   
+      height: 25em;
+      margin-top: 2rem;
+      width: 25rem;
+    }
+    .sub-card1{
+      width: 2rem;
+      /* margin-left: 3rem; */
+      margin-top: 1rem;
+      height: 2rem;
+      background-color: black;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card2{
+      width: 2rem;
+      background-color: rgb(34, 85, 10);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card3{
+      width: 2rem;
+      background-color: rgba(169, 169, 169, 0.705);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card4{
+      width: 2rem;
+      background-color: rgba(216, 227, 237, 0.792);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card5{
+      width: 2rem;
+       margin-right: 1rem;
+       background: linear-gradient(117deg,rgba(36, 10, 51, 1) 33%, rgba(189, 147, 49, 1) 68%);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card6{
+      width: 2rem;
+      /* margin-left: 3rem; */
+      margin-top: 1rem;
+      height: 2rem;
+      background: linear-gradient(138deg,rgba(15, 19, 92, 1) 33%, rgba(189, 70, 49, 1) 68%);
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card7{
+      width: 2rem;
+      background: linear-gradient(138deg,rgba(5, 5, 8, 1) 33%, rgba(14, 71, 14, 1) 68%);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card8{
+      width: 2rem;
+       background-color: black;
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-card9{
+      width: 2rem;
+      background: linear-gradient(138deg,rgba(235, 148, 235, 1) 33%, rgba(4, 8, 4, 1) 68%);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box1{
+      width: 2rem;
+      background-color: hsl(229, 82%, 94%);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box2{
+      width: 2rem;
+      background-color: black;
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box3{
+      width: 2rem;
+      background-color: rgb(67, 66, 90);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box4{
+      width: 2rem;
+      background-color: gray;
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box5{
+      width: 2rem;
+      background-color: bisque;
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .sub-mini-box6{
+      width: 2rem;
+      background: linear-gradient(138deg,rgb(80, 130, 146) 33%, rgb(193, 96, 212) 68%);
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 100%;
+       /* border: 2px solid black; */
+    }
+    .minbox2{
+      display: grid;
+      gap: 20px;
+      grid-template-columns: auto auto auto auto auto;
+      justify-content: center;
+      
+    }
+    .minbox1{
+      margin-top: 2em;
+    }
+    .sub-box2 .minbox2{
+      display: grid;
+      gap: 50px;
+      justify-content: center;
+      grid-template-columns: auto auto auto;
+    }
+    .offerings-box1 {
+         text-align: center;
+         margin-top: 2rem;
+        
+    }
+      .offerings {
+         text-align: center;
+         margin-top: 2rem;
+         display: grid;
+         /* justify-content: center; */
+         grid-template-columns: auto auto auto;
+    }
+    .offeringcard {
+         text-align: center;
+         margin-top: 2rem;
+         display: grid;
+         gap: 70px;
+         justify-content: center;
+         grid-template-columns: auto auto auto;
+    }
+    .offerings-box1 img {
+        width: 250px;
+         border-radius: 100%;
+    }
+     .offerings-box1 h4 {
+         text-align: center;
+        margin-top: 1rem;
+        
+    }
+    .offerings-box1 button  {
+        padding: 5px;
+        width: 10rem;
+        background: none;
+        border: 2px solid rgb(120, 173, 233);
+        border-radius: 20px;
+    }
+    .offerings-box1 button a {
+         text-decoration: none;
+        
+    }
+     .order-section1{
+      text-align: center;
+      background-color: hwb(188 84% 2% / 0.639);
+     }
+     .mini-order-box img{
+        border-radius: 10px;
+        
+     }
+    .order-box{
+      /* border: 2px solid black; */
+      width: 40rem;
+      margin-top: 3rem;
+       display: grid;
+       margin-left: 20em;
+       align-items: center;
+       justify-content: space-around;
+       grid-template-columns:auto auto  ;
+    }
+              footer {
+      background: #0b1622;
+      padding: 40px 50px;
+      line-height: 1.8;
+      color: #fff;
+      /* margin-top: 20px; */
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff4747;
+    }
+    /* .popular{
+      color: white;
+    } */
+    .footer-top {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      margin-right: 15px;
+      font-size: 22px;
+      display: inline-block;
+    }
+
+    .payment img {
+      height: 35px;
+      margin-left: 10px;
+    }
+    
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    } 
+      
+      .popular {
+      background: #111a27;
+      padding: 20px;
+      border-radius: 6px;
+
+      max-width: 900px;
+    }
+
+    .popular h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ff4747;
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+    .category strong:hover {
+      color: #ff4747;
+      cursor: pointer;
+    }
+    .category span:hover{
+           color: #ff4747;
+           cursor: pointer;
+    }
+    .category strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+     .social .insta:hover{
+      color: darkmagenta;
+     }
+     .social .ytube:hover{
+      color: crimson;
+     }
+     .social .facebook:hover{
+      color: rgb(17, 52, 208);
+     }
+     .social .linkdin:hover{
+      color: rgb(20, 50, 220);
+     }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;       
+      gap: 10px;            
+    }
+
+    .list span {
+      background: #1c2533;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap; 
+    }
+    h5 span{
+      color: #0000003b;
+      text-decoration: line-through;
+    }
     </style>
 </head>
 <body>
@@ -363,6 +725,271 @@
 
 
     </section>
+    <section class="custom-option" data-aos="fade-up" data-aos-duration="1000">
+           <h2 id="learn-more">Customization Options</h2>
+           <p>Personalize your eyewear with your brand logo or customizations, for a special touch.</p>
+                <h1><i class="fa-solid fa-right-long" style="color: #a82a0b;"></i>Frame and Colour Choices</h1>
+           <div class="box4">
+              <div class="sub-box1">
+                <h4> Wayfarers</h4>
+                <div class="minbox1">
+                   <img src="https://www.woggles.in/desktop/images/bulk/wayfare.png" alt="">
+                </div>
+                <div class="minbox2">
+                  <div class="sub-card1"></div>
+                  <div class="sub-card2"></div>
+                  <div class="sub-card3"></div>
+                  <div class="sub-card4"></div>
+                  <div class="sub-card5"></div>
+                  <div class="sub-card6"></div>
+                   <div class="sub-card7"></div>
+                  <div class="sub-card8"></div>
+                  <div class="sub-card9"></div>
+                </div>
+              </div>
+              <div class="sub-box2">
+                <h4> square</h4>
+                <div class="minbox1">
+                   <img src="https://www.woggles.in/desktop/images/bulk/Square.png" alt="">
+                </div>
+                <div class="minbox2">
+                  <div class="sub-mini-box1"></div>
+                  <div class="sub-mini-box2"></div>
+                  <div class="sub-mini-box3"></div>
+                  <div class="sub-mini-box4"></div>
+                  <div class="sub-mini-box5"></div>
+                  <div class="sub-mini-box6"></div>
+                 
+                </div>
+              </div>
+              <div class="sub-box3">
+                <h4> Round</h4>
+                <div class="minbox1">
+                   <img src="https://www.woggles.in/desktop/images/bulk/round.png" alt="">
+                </div>
+                <div class="minbox2">
+                  <div class="sub-mini-box1"></div>
+                  <div class="sub-mini-box2"></div>
+                  <div class="sub-mini-box3"></div>
+                  <div class="sub-mini-box4"></div>
+                  <div class="sub-mini-box5"></div>
+                    
+                 
+                </div>
+              </div>
+           </div>
+
+           <h1><i class="fa-solid fa-right-long" style="color: #a82a0b;"></i>Imprint Your Identity</h1>
+           <div class="mini-card1">
+            <img src="https://www.woggles.in/desktop/images/bulk/Imprint_your_identity_desktop_2.png" alt="">
+           </div>
+             <h2>Our offerings include</h2>
+             <div class="offerings">
+              <div class="offerings-box1">
+                <img src="https://www.woggles.in/desktop/images/bulk/we-offer_1.jpg" alt="">
+                <h4>Premium Quality</h4>
+                <p>Crafted with care and precision, our <br> eyewear are made ultra comfortable to <br> frame you to perfection.</p>
+              </div>
+              <div class="offerings-box1">
+                <img src="https://www.woggles.in/desktop/images/bulk/we-offer_2.jpg" alt="">
+                <h4>Stylish Designs</h4>
+                <p>Pick from a wide range of modern and <br> classic design options, and frame shapes <br> according to your face.</p>
+              </div>
+              <div class="offerings-box1">
+                <img src="https://www.woggles.in/desktop/images/bulk/we-offer-3.jpg" alt="">
+                <h4>Customizable Options</h4>
+                <p>Personalize your eyewear with your brand <br> logo or customizations, for a special touch.</p>
+                <button><a href="#learn-more">Learn more</a></button>
+              </div>
+                 </div>
+                <div class="offeringcard">
+
+               
+              <div class="offerings-box1">
+                <img src="https://www.woggles.in/desktop/images/bulk/we%20offer-4.png" alt="">
+                <h4>Competitive Pricing</h4>
+                <p>Enjoy attractive discounts on bulk orders <br> without compromising on quality.</p>
+
+              </div>
+              <div class="offerings-box1">
+                <img src="https://www.woggles.in/desktop/images/bulk/we-offer-5.png" alt="">
+                <h4>Fast and Reliable Delivery</h4>
+                <p>*PAN India shipping</p>
+              </div>
+              </div>
+          
+    </section>
+    <section class="order-section1">
+       <h1>How to Order</h1>
+       <p>Ready to place a bulk order? Here's how it works</p>
+       <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large;"></i>
+       <div class="order-box" data-aos="zoom-in-up" data-aos-duration="600" >
+          <div class="mini-order-box">
+            <h4>1. Get in Touch</h4>
+            <p>Contact our bulk purchase team [via <br> Contact Form/Email/Phone Number] <br> to discuss your needs.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step1.jpg" alt="">
+          </div>
+
+       </div>
+              <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large; margin-top: 2rem;" ></i>
+
+        <div class="order-box" data-aos="zoom-in-up" data-aos-duration="800" >
+          <div class="mini-order-box">
+            <h4>2. Choose Your Products</h4>
+            <p>Select from our extensive catalog of <br> sunglasses and eyeglasses, or let us <br> help you find the perfect match.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step2.jpg" alt="">
+          </div>
+
+       </div>
+              <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large; margin-top: 2rem;"></i>
+       <div class="order-box" data-aos="zoom-in-up" data-aos-duration="1000" >
+          <div class="mini-order-box">
+            <h4>3. Customization & Branding</h4>
+            <p>Opt for any customization that you need.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step3.jpg" alt="">
+          </div>
+
+       </div>
+              <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large; margin-top: 2rem;"></i>
+       <div class="order-box" data-aos="zoom-in-up" data-aos-duration="1200" >
+          <div class="mini-order-box">
+            <h4>4. Receive a Quote</h4>
+            <p>We'll provide a competitive quote <br> based on your requirements.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step4.jpg" alt="">
+          </div>
+
+       </div>
+             <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large; margin-top: 2rem;"></i>
+       <div class="order-box" data-aos="zoom-in-up" data-aos-duration="1400" >
+          <div class="mini-order-box">
+            <h4>5. Finalize & Pay</h4>
+            <p>Confirm your order and make payment <br> through our secure payment gateway.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step5.jpg" alt="">
+          </div>
+
+       </div>
+          <i class="fa-solid fa-down-long" style="color: #ababab; font-size: xx-large; margin-top: 2rem;"></i>
+       <div class="order-box" data-aos="zoom-in-up" data-aos-duration="1600" >
+          <div class="mini-order-box">
+            <h4>6. Delivery</h4>
+            <p>Sit back and relax while we prepare <br> and ship your order to your specified <br>location.</p>
+          </div>
+          <div class="mini-order-box">
+            <img width="250px" src="https://www.woggles.in/desktop/images/bulk/step6.jpg" alt="">
+          </div>
+
+       </div>
+    </section>
+      <footer>
+    <p><strong>Buy The Best Eyewear From Woggles</strong><br>
+      Woggles is online shopping destination for sunglasses & goggles.
+    </p>
+
+    <div class="footer-top">
+      <div>
+        <h3>Company</h3>
+        <a href="#">About US</a>
+        <a href="#">Blogs</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping policy</a>
+      </div>
+
+      <div>
+        <h3>Need Help</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Return , Refund and Cancellation</a>
+        <a href="#">FAQ</a>
+        <a href="#">Track Orders</a>
+      </div>
+
+      <div>
+        <h3>Shop by Brand</h3>
+        <a href="#">Red Pappy</a>
+        <a href="#">Ockhi</a>
+      </div>
+
+      <div>
+        <h3>Service</h3>
+        <a href="#">Bulk Purchase</a>
+      </div>
+
+      <div>
+            Bopal Gam, Vakil Sah Breez
+             () ahmedabad, India- 380058
+      </div>
+ </div>
+     <div class="popular">
+    <h3>Popular Categories</h3>  
+
+    <div class="category">
+      <strong>Popular Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+        <span>Hexagonal Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Men's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <strong>Popular Women's Sunglasses</strong>
+      <div class="list">
+        <span>Wayfarer Sunglasses</span>
+        <span>Square Sunglasses</span>
+        <span>Round Sunglasses</span>
+        <span>Aviator Sunglasses</span>
+        <span>Clubmaster Sunglasses</span>
+      </div>
+    </div>
+  </div>
+   
+
+    <div class="social">
+      <span>Let’s connect </span>
+      <a class="insta" href="#"><i class="fab fa-instagram"></i></a>
+      <a class="facebook" href="#"><i class="fab fa-facebook"></i></a>
+      <a class="ytube" href="#"><i class="fab fa-youtube"></i></a>
+      <a class="pins" href="#"><i class="fab fa-pinterest"></i></a>
+      <a class="linkdin" href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Goggles Distribution Pvt. Ltd. All Rights Reserved.</p>
+      <div class="payment">
+        <img  src="./Screenshot 2025-08-24 201343.png" alt="">
+       
+      </div>
+    </div>
+  </footer>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+   
+    AOS.init();
+  </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
